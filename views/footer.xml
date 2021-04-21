@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <template id="my_website.footer" name="My Website Footer" inherit_id="website.footer_custom">
+            <xpath expr="//div[@class='container']//div[hasclass('col-lg-2')]" position="replace">
+                <div class="col-lg-2 pt24 pb24">
+                    <h5 class="mb-3">Useful Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/blog">Blog</a></li>
+                        <li><a href="forum">Forum</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+
+                    </ul>
+                </div>
+            </xpath>
+            <xpath expr="//div[@class='container']//div[hasclass('col-lg-5')]" position="replace">
+                <div class="col-lg-5 pt24 pb24">
+                    <h5 class="mb-3">About us</h5>
+                    <p>We are a team of passionate people whose goal is to share our experiences with Arduino. We build great stuff to showcase our ideas.</p>
+                </div>
+            </xpath>
+        </template>
+        <template id="my_website.copyright_footer" name="My Website Copyright" inherit_id="web.frontend_layout">
+            <xpath expr="//footer//span[hasclass('o_footer_copyright_name')]" position="replace">
+                <span class="o_footer_copyright_name mr-2">Copyright &amp;copy; Jake Cornelia</span>
+            </xpath>
+        </template>
+    </data>
+</odoo>

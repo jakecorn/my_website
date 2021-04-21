@@ -1,0 +1,47 @@
+$red: #dc3545;
+$green: #28a745;
+$dark-red: #b3313e;
+$dark-white: #cacaca;
+$text-lg-size: 24px;
+$text-md-size: 20px;
+$text-sm-size: 18px;
+$text-xs-size: 14px;
+
+.link-red{
+    color: $red;
+    &:hover {
+        color: $dark-red;
+        text-decoration: underline;
+    }
+}
+.text-red {
+    color: $red;
+}
+.text-dark-white {
+    color: $dark-white;
+}
+
+.text-title {
+    font-size: $text-lg-size;
+}
+.text-lg {
+    font-size: $text-lg-size;
+}
+.text-md {
+    font-size: $text-md-size;
+}
+.text-sm {
+    font-size: $text-sm-size;
+}
+.text-xs{
+    font-size: $text-xs-size;
+}
+
+.bg-overlay {
+    position: absolute;
+    top:0;
+    left:0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+}

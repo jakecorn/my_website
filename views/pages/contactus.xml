@@ -1,0 +1,20 @@
+
+<odoo>
+    <data>
+        <template id="my_website.contactus_form" name="Contact Us Form" inherit_id="website_form.contactus_form">
+            <xpath expr="//div[hasclass('form-group')][4]" position="attributes">
+                <attribute name="class" add="d-none" separator=" "/>
+            </xpath>
+            <xpath expr="//div[hasclass('form-group')][1]" position="before">
+                <input type="hidden" name="lead_type" value="Contact Us"/>
+            </xpath>
+            <xpath expr="//div[hasclass('form-group')][6]//span[@class='s_website_form_label_content']" position="replace">
+                <span class="s_website_form_label_content">Your Question/Suggestion</span>
+            </xpath>
+            <xpath expr="//div[hasclass('s_website_form_submit')]/a[hasclass('s_website_form_send')]" position="attributes">
+                <attribute name="class" add="px-5" separator=" "/>
+                <attribute name="class" remove="btn-lg" separator=" "/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

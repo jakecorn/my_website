@@ -1,0 +1,247 @@
+<odoo>
+    <data>
+        <template id="my_website.header" name="My Website Header" inherit_id="website.template_header_default">
+            <xpath expr="//header" position="replace">
+                <header t-if="not no_header" id="top" data-anchor="true">
+                    <section class="s_parallax bg-black-50 parallax main-header" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax">
+                        <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@nahakioleutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextRobin Glausera on a href=httpsunsplash.comsphotosarduinoutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=credit.jpg&quot;);"/>
+                        <t t-call="my_website.navbar"></t>
+                        <div t-if="pageName == 'homepage'" style="height: 300px;" class="d-flex align-items-center justify-content-center">
+                            <div class="text-center  mx-0 mx-lg-5 px-4 px-lg-5 w-100 w-lg-75">
+                                <h2 class="font-weight-bold">Welcome to Our Website</h2>
+                                <p>Take a look of our amazing build guides with Arduino and start building yours.</p>
+                                <a href="/blog" class="btn btn-success px-4">Check Latest Posts</a>
+                            </div>
+                        </div>
+                    </section>
+                </header>
+            </xpath>
+        </template>
+
+        <template id="my_website.navbar" name="My Website Nav Bar">
+            <div class="bg-overlay" style="background: #000000;opacity: 0.8;"></div>
+            <nav data-name="Navbar" class="navbar navbar-expand-md o_colored_level o_cc shadow-sm px-0" style="background-color: transparent">
+                <div id="navbar-overlay"/>
+                <div id="top_menu_container"
+                     class="container justify-content-start justify-content-lg-between pl-3 text-uppercase" style="z-index: 1">
+                    <!-- Brand -->
+                    <t t-call="website.placeholder_header_brand">
+                        <t t-set="_link_class" t-value="'mr-4'"/>
+                    </t>
+                    <button type="button" t-attf-class="navbar-toggler ml-auto" data-toggle="collapse" data-target="#top_menu_collapse">
+                        <span class="navbar-toggler-icon o_not_editable fa fa-bars h-100 text-white"/>
+                    </button>
+                    <!-- Navbar Collapse -->
+                    <div id="top_menu_collapse" class="collapse navbar-collapse order-last order-lg-0">
+                        <t t-call="website.navbar_nav">
+                            <t t-set="_nav_class" t-value="'flex-grow-1'"/>
+                            <!-- Menu -->
+                            <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                <t t-call="website.submenu">
+                                    <t t-set="item_class" t-value="'nav-item'"/>
+                                    <t t-set="link_class" t-value="'nav-link'"/>
+                                </t>
+                            </t>
+                            <!-- Sign In -->
+                            <t t-call="portal.placeholder_user_sign_in">
+                                <t t-set="_item_class" t-value="'nav-item ml-lg-auto'"/>
+                                <t t-set="_link_class" t-value="'nav-link font-weight-bold'"/>
+                            </t>
+                            <!-- User Dropdown -->
+                            <t t-call="portal.user_dropdown">
+                                <t t-set="_user_name" t-value="true"/>
+                                <t t-set="_item_class" t-value="'nav-item dropdown ml-lg-auto'"/>
+                                <t t-set="_link_class" t-value="'nav-link font-weight-bold'"/>
+                            </t>
+                        </t>
+                    </div>
+                    <!-- Language Selector -->
+                    <t t-call="website.placeholder_header_language_selector">
+                        <t t-set="_div_classes" t-value="'ml-2'"/>
+                    </t>
+                    <!-- Button -->
+                    <div class="oe_structure oe_structure_solo" id="oe_structure_header_default_1"/>
+                </div>
+            </nav>
+        </template>
+
+        <template id="my_website.upcoming_video" name="Homepage Upcoming Video">
+            <section class="mb-5">
+                <div class="row">
+                    <div id="square-banner" class="offset-lg-1 offset-xl-2 col-12 col-lg-10 col-xl-8" style="max-height:300px; color: white;">
+                        <div class="bg-overlay" style="background: black;opacity: 0.7;"></div>
+                        <div class="container px-0">
+                            <div class="row py-5 py-lg-3 px-3 px-lg-3 ">
+                                <div class="col-12 col-lg-5 d-flex align-items-center overflow-hidden pl-lg-0">
+                                    <img src="/my_website/static/images/banner/homepage_banner.jpg"
+                                         class="img-fluid"/>
+                                </div>
+                                <div class="col-12 col-lg-7 px-lg-0">
+                                    <h5 class="text-title text-red d-none d-lg-block">Upcoming Video:</h5>
+                                    <h1 class="text-title text-dark-white mt-3 mt-lg-0">Your First DIY RC Plane Using Arduino
+                                        Microcontroller
+                                    </h1>
+                                    <div id="description" class="text-dark-white">
+                                        <p class="mb-0">
+                                            reat stories have a personality. Consider telling a great story that
+                                            provides
+                                            personality. Writing a story with personality for potential clients
+                                            will assist with
+                                            making a relationship connection. This shows up in small quirks like
+                                            word choices or
+                                            phrases. Write from your point of view, not from someone else's
+                                            experience
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template id="my_website.homepage" name="Homepage" inherit_id="website.homepage">
+            <xpath expr="//div[@id='wrap']" position="replace">
+                <div id="wrap" class="oe_structure oe_empty homepage-body">
+<!--                    <t t-call="my_website.upcoming_video"></t>-->
+                    <div class="container mt-5 mt-lg-0">
+                        <section id="latest_video_section" name="Latest Videos">
+                            <h5 class="text-lg section-title mb-4 font-weight-bold mt-5">LATEST VIDEOS</h5>
+                            <div class="row">
+                                <div class="col-12 col-lg-6 mb-4 mb-lg-0 pr-lg-5">
+                                    <t t-call="my_website.homepage_latest_video"/>
+                                </div>
+                                <div class="col-12 col-lg-6 mb-4 mb-lg-0 pl-lg-5">
+                                    <t t-call="my_website.homepage_latest_video"/>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <t t-call="my_website.share_your_idea"/>
+                    <section id="latest_article_section" name="Latest Articles" class="py-5">
+                        <div class="container">
+                            <h5 class="text-lg section-title mb-2 font-weight-bold">LATEST ARTICLES</h5>
+                            <div class="row">
+                                <t t-call="my_website.homepage_latest_article"/>
+                                <t t-call="my_website.homepage_latest_article"/>
+                                <t t-call="my_website.homepage_latest_article"/>
+                            </div>
+                        </div>
+
+                        </section>
+                    <t t-call="my_website.subscribe_section"/>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="share_your_idea" name="Share Your Idea Section">
+            <section id="share_your_idea_form" class="col-12 mt-5 s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
+                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@spenutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextSpencera on a href=httpsunsplash.comcollections2247852arduinoutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=credit.jpg&quot;);"/>
+                <div class="bg-overlay" style="background: #350000; opacity: 0.8"></div>
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex justify-content-center  flex-column">
+                            <div class="w-100 text-white">
+                                <h2 class="mb-3">LET ME KNOW WHAT YOU THINK!</h2>
+                                <p class="mb-0">
+                                    Do you have an idea but don't have a chance to put it in action or doesn't know how to get started?
+                                    Tell me about it and I will show you how. We will build your idea and see it in action. Credits are always on you.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <div class="w-100">
+                                <form id="share_your_idea_form" action="/website_form/" method="post" data-model_name="crm.lead" class="s_website_form container-fluid mt32" enctype="multipart/form-data" data-success_page="/thank-you-quote-request" data-captcha-action="contactpage" data-sitekey="6LdTx70ZAAAAAP-oAWf8nzx98f1cbR18SFg3lQtf">
+                                    <input type="hidden" name="csrf_token" value="edf5d6d0a25e7dfc53a88581568e67e6f7284824o1618409506"/>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group form-field o_website_form_custom o_website_form_required_custom">
+                                                <input type="text" class="form-control o_website_form_input" placeholder="Name" id="x_first" name="x_first" required=""/>
+                                            </div>
+                                            <div class="form-group form-field o_website_form_custom o_website_form_required_custom">
+                                                <input type="text" class="form-control o_website_form_input" placeholder="Email" id="x_first" name="x_first" required=""/>
+                                            </div>
+                                            <div class="form-group form-field o_website_form_custom o_website_form_required_custom">
+                                                <textarea class="form-control" rows="4" placeholder="Explain your idea here..." spellcheck="false"></textarea>
+                                            </div>
+
+                                            <div class="form-group ">
+                                                <button class="btn btn-primary px-5">Submit</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+        <template id="subscribe_section" name="Subscribe Section">
+            <section class="newsletter s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
+                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px;transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@nicolasthomasutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextNicolas Thomasa on a href=httpsunsplash.comcollections2247852arduinoutm_source=unsplash&amp;utm_medium=referral&amp;ut.jpg&quot;);"/>
+                <div class="bg-overlay" style="background: #2D8685;opacity: 0.8;"></div>
+                <div class="container py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-xl-9 col-lg-10 col-md-10 col-12 text-center">
+                            <h2 class="text-white">SUBSCRIBE TO OUR BLOG</h2>
+                            <p class="text-white mt-3">
+                                Subscribe to our blog and keep updated of our interesting ideas.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="form">
+                        <form novalidate="novalidate" enctype="multipart/form-data" data-captcha-action="contactpage" action="/subscribe/submit/" class="row justify-content-center" id="subscribe_form" method="post">
+                            <input type="hidden" name="csrf_token" value="519f6078be92836c24d4eae0a0a4bbd70867a9b4o1618406869"/>
+                            <div class="row justify-content-center py-3">
+                                <div class="form-group mx-4 mx-md-2 p-0 mb-3 mb-lg-0 ">
+                                    <input class="form-control input-border-blue" type="text" name="first_name" placeholder="Name"/>
+                                    <span class="focus-border"><i></i></span>
+                                </div>
+                                <div class="form-group mx-4 mx-md-2 p-0 mb-3 mb-lg-0">
+                                    <input class="form-control input-border-blue" type="email" name="email" placeholder="Email"/>
+                                    <span class="focus-border"><i></i></span>
+                                </div>
+                                <div class="form-group mx-4 mx-md-2 p-0 mb-3 mb-lg-0">
+                                    <button type="submit" class="btn btn-danger text-white px-5">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template id="homepage_latest_article" name="Homepage Latest Article">
+            <div class="d-flex col-12 col-md-6 col-lg-4 mt-3 mb-3 mb-md-0">
+                <div class="d-flex flex-column flex-md-row flex-nowrap" style="overflow: hidden;">
+                    <div class="w-100" style="width: 300px">
+                        <a class="mr-3" style="" title="ReadBlock Scientific to Exhibit at the 2021 AACC Annual Scientific Meeting &amp; Clinical Lab Expo" href="/blog/168/post/1683">
+                            <img class="img img-fluid mx-auto" src="/my_website/static/images/test/latestvideo1.jpg"/>
+                        </a>
+                    </div>
+                    <div class="d-flex flex-column justify-content-between pl-0 pl-md-3">
+                        <a class="link-red" title="ReadBlock Scientific to Exhibit at the 2021 AACC Annual Scientific Meeting &amp; Clinical Lab Expo" href="/blog/168/post/1683">
+                            <div class="font-weight-bold">Block Scientific to Exhibit at the 2021 AACC Annual Scientific Meeting &amp; Clinical Lab Expo</div>
+                        </a>
+                        <div class="font-italic">February 08, 2021</div>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="homepage_latest_video" name="Homepage Latest Video">
+            <div>
+                <div class="img-container overflow-hidden mb-3">
+                    <img class="img-fluid" src="/my_website/static/images/test/latestvideo1.jpg"/>
+                </div>
+                <h2 class="text-red text-md">How To Setup The 2x2 LCD</h2>
+                <span class="text-muted text-xs d-block mb-2">March 23, 2020</span>
+                <p>
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+            </div>
+        </template>
+    </data>
+</odoo>

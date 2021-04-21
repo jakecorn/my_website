@@ -1,0 +1,58 @@
+$color-white: white;
+header {
+    nav.navbar {
+        #navbar-overlay {
+            @extend .bg-overlay;
+            opacity: 0.8;
+            background: black;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+            &:hover {
+                color: $red;
+            }
+        }
+    }
+}
+
+.homepage {
+    .main-header {
+        min-height: 300px;
+        #navbar-overlay {
+            opacity: 0.2 !important;
+        }
+        #square-banner {
+            #description {
+                line-height: 1.2
+            }
+        }
+    }
+    .homepage-body {
+        position:relative;
+        //top: -150px;
+        //margin-bottom: -150px;
+        z-index: 1031;
+        @include media-breakpoint-down(md) {
+            //top: 0;
+            #square-banner {
+                max-height: none !important;
+            }
+        }
+    }
+    #latest_video_section{
+        .img-container {
+            height: 350px;
+            @include media-breakpoint-down(md){
+                height: auto;
+            }
+        }
+    }
+
+   .newsletter {
+        .form-group {
+            @include media-breakpoint-down(md){
+                width: 100%;
+            }
+        }
+   }
+}
