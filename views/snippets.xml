@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <template id="share_your_idea_form" name="Share Your Idea Form">
+            <section id="share_your_idea_form" class="col-12 mt-5 s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
+                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@spenutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextSpencera on a href=httpsunsplash.comcollections2247852arduinoutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=credit.jpg&quot;);"/>
+                <div class="bg-overlay" style="background: #350000; opacity: 0.8"></div>
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-12 col-md-6 d-flex justify-content-center  flex-column">
+                            <div class="w-100 text-white">
+                                <h2 class="mb-3">LET ME KNOW WHAT YOU THINK!</h2>
+                                <p class="mb-0">
+                                    Do you have an idea but don't have a chance to put it in action or doesn't know how to get started?
+                                    Tell me about it and I will show you how. We will build your idea and see it in action. Credits are always on you.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 s_website_form">
+                            <div class="w-100">
+                                <form id="share_your_idea_form" action="/website_form/" method="post" data-model_name="crm.lead" class="s_website_form o_mark_required container-fluid mt32" data-mark="*" data-success-mode="redirect" enctype="multipart/form-data" data-success-page="/shared-idea-thank-you">
+                                    <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                    <input type="hidden" name="lead_type" value="Shared Idea"/>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form-group s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                                <label class="s_website_form_label d-none" for="contact_name">
+                                                    <span class="s_website_form_label_content">Your Name</span>
+                                                </label>
+                                                <input type="text" id="contact_name" class="form-control s_website_form_input" placeholder="Your Name *" name="contact_name"  required=""/>
+                                            </div>
+                                            <div class="form-group s_website_form_field s_website_form_required" data-type="email" data-name="Field">
+                                                <label class="s_website_form_label d-none" for="email">
+                                                    <span class="s_website_form_label_content">Email</span>
+                                                </label>
+                                                <input type="text" id="email" class="form-control o_website_form_input" placeholder="Email *" name="email_from"  required=""/>
+                                            </div>
+                                            <div class="form-group s_website_form_field s_website_form_required" data-type="char" data-name="Field">
+                                                <label class="s_website_form_label d-none" for="email">
+                                                    <span class="s_website_form_label_content">Topic/Title</span>
+                                                </label>
+                                                <input type="text" id="email" class="form-control o_website_form_input" placeholder="Title *" name="name"  required=""/>
+                                            </div>
+                                            <div class="form-group s_website_form_field s_website_form_required" data-type="text" data-name="Field">
+                                                <label class="s_website_form_label d-none" for="idea">
+                                                    <span class="s_website_form_label_content">Description</span>
+                                                </label>
+                                                <textarea class="form-control o_website_form_input" id="idea" rows="4" placeholder="Explain your idea here... *" name="description" spellcheck="false" required=""></textarea>
+                                            </div>
+
+                                            <div class="form-group s_website_form_submit">
+                                                <button class="btn btn-primary px-5 s_website_form_send ">Submit</button>
+                                                <div class="mt-3"><span id="s_website_form_result" class="ml-0"></span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </template>
+
+        <template id="subscribe_form" name="Subscribe Form">
+            <div class="newsletter s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
+                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px;transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@nicolasthomasutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextNicolas Thomasa on a href=httpsunsplash.comcollections2247852arduinoutm_source=unsplash&amp;utm_medium=referral&amp;ut.jpg&quot;);"/>
+                <div class="bg-overlay" style="background: #2D8685;opacity: 0.8;"></div>
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-lg-8 offset-lg-2 pt24 pb24">
+                            <h2>SUBSCRIBE TO OUR BLOG</h2>
+                            <p>Be the first to find out all the latest news and keep updated with our interesting ideas.</p>
+                            <div class="s_newsletter_subscribe_form js_subscribe" data-list-id="1" data-snippet="s_newsletter_subscribe_form">
+                                <div class="input-group">
+                                    <input type="email" name="email" class="js_subscribe_email form-control" placeholder="your email..."/>
+                                    <span class="input-group-append">
+                                        <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_submit o_default_snippet_text d-none px-4" style="border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem;">Subscribe</a>
+                                        <a role="button" href="#" class="btn btn-success js_subscribed_btn o_submit o_default_snippet_text px-4" disabled="disabled">Thanks</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </data>
+</odoo>

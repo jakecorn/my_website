@@ -6,7 +6,7 @@
     'website': "http://www.yourcompany.com",
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base', 'website', 'portal'],
+    'depends': ['base', 'website', 'portal', 'website_form'],
     # always loaded
     'data': [
         'views/views.xml',
@@ -14,6 +14,9 @@
         'views/homepage.xml',
         'views/templates.xml',
         'views/footer.xml',
+        'views/snippets.xml',
         'views/pages/contactus.xml',
+        'data/pages.xml',
+        'data/fields.xml',
     ],
 }

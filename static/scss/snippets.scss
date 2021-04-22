@@ -2,6 +2,7 @@ $red: #dc3545;
 $green: #28a745;
 $dark-red: #b3313e;
 $dark-white: #cacaca;
+$text-xl-size: 45px;
 $text-lg-size: 24px;
 $text-md-size: 20px;
 $text-sm-size: 18px;
@@ -23,6 +24,9 @@ $text-xs-size: 14px;
 
 .text-title {
     font-size: $text-lg-size;
+}
+.text-xl {
+    font-size: $text-xl-size;
 }
 .text-lg {
     font-size: $text-lg-size;

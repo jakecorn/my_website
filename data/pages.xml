@@ -1,0 +1,12 @@
+<odoo>
+    <data>
+        <record id="shared_idea_thanks" model="website.page">
+            <field name="name">Thanks for sharing your idea</field>
+            <field name="url">/shared-idea-thank-you</field>
+            <field name="is_published">True</field>
+            <field name="website_indexed">True</field>
+            <field name="website_published">True</field>
+            <field name="view_id" ref="my_website.shared_idea_thanks"/>
+        </record>
+    </data>
+</odoo>

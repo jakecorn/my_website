@@ -8,7 +8,7 @@
                         <t t-call="my_website.navbar"></t>
                         <div t-if="pageName == 'homepage'" style="height: 300px;" class="d-flex align-items-center justify-content-center">
                             <div class="text-center  mx-0 mx-lg-5 px-4 px-lg-5 w-100 w-lg-75">
-                                <h2 class="font-weight-bold">Welcome to Our Website</h2>
+                                <h2 class="font-weight-bold text-xl">Welcome to Our Website</h2>
                                 <p>Take a look of our amazing build guides with Arduino and start building yours.</p>
                                 <a href="/blog" class="btn btn-success px-4">Check Latest Posts</a>
                             </div>
@@ -118,7 +118,7 @@
                             </div>
                         </section>
                     </div>
-                    <t t-call="my_website.share_your_idea"/>
+                    <section id="share_your_idea_section"></section>
                     <section id="latest_article_section" name="Latest Articles" class="py-5">
                         <div class="container">
                             <h5 class="text-lg section-title mb-2 font-weight-bold">LATEST ARTICLES</h5>
@@ -130,87 +130,21 @@
                         </div>
 
                         </section>
-                    <t t-call="my_website.subscribe_section"/>
+                    <section id="subscribe_section"></section>
                 </div>
             </xpath>
         </template>
 
-        <template id="share_your_idea" name="Share Your Idea Section">
-            <section id="share_your_idea_form" class="col-12 mt-5 s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
-                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@spenutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextSpencera on a href=httpsunsplash.comcollections2247852arduinoutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=credit.jpg&quot;);"/>
-                <div class="bg-overlay" style="background: #350000; opacity: 0.8"></div>
-                <div class="container py-5">
-                    <div class="row">
-                        <div class="col-12 col-md-6 d-flex justify-content-center  flex-column">
-                            <div class="w-100 text-white">
-                                <h2 class="mb-3">LET ME KNOW WHAT YOU THINK!</h2>
-                                <p class="mb-0">
-                                    Do you have an idea but don't have a chance to put it in action or doesn't know how to get started?
-                                    Tell me about it and I will show you how. We will build your idea and see it in action. Credits are always on you.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <div class="w-100">
-                                <form id="share_your_idea_form" action="/website_form/" method="post" data-model_name="crm.lead" class="s_website_form container-fluid mt32" enctype="multipart/form-data" data-success_page="/thank-you-quote-request" data-captcha-action="contactpage" data-sitekey="6LdTx70ZAAAAAP-oAWf8nzx98f1cbR18SFg3lQtf">
-                                    <input type="hidden" name="csrf_token" value="edf5d6d0a25e7dfc53a88581568e67e6f7284824o1618409506"/>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <div class="form-group form-field o_website_form_custom o_website_form_required_custom">
-                                                <input type="text" class="form-control o_website_form_input" placeholder="Name" id="x_first" name="x_first" required=""/>
-                                            </div>
-                                            <div class="form-group form-field o_website_form_custom o_website_form_required_custom">
-                                                <input type="text" class="form-control o_website_form_input" placeholder="Email" id="x_first" name="x_first" required=""/>
-                                            </div>
-                                            <div class="form-group form-field o_website_form_custom o_website_form_required_custom">
-                                                <textarea class="form-control" rows="4" placeholder="Explain your idea here..." spellcheck="false"></textarea>
-                                            </div>
-
-                                            <div class="form-group ">
-                                                <button class="btn btn-primary px-5">Submit</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
+        <template id="share_your_idea_section" name="Share Your Idea Section" customize_show="True" inherit_id="my_website.homepage">
+            <xpath expr="//section[@id='share_your_idea_section']" position="inside">
+                <t t-call="my_website.share_your_idea_form"/>
+            </xpath>
         </template>
-        <template id="subscribe_section" name="Subscribe Section">
-            <section class="newsletter s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
-                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px;transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@nicolasthomasutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextNicolas Thomasa on a href=httpsunsplash.comcollections2247852arduinoutm_source=unsplash&amp;utm_medium=referral&amp;ut.jpg&quot;);"/>
-                <div class="bg-overlay" style="background: #2D8685;opacity: 0.8;"></div>
-                <div class="container py-5">
-                    <div class="row justify-content-center">
-                        <div class="col-xl-9 col-lg-10 col-md-10 col-12 text-center">
-                            <h2 class="text-white">SUBSCRIBE TO OUR BLOG</h2>
-                            <p class="text-white mt-3">
-                                Subscribe to our blog and keep updated of our interesting ideas.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="form">
-                        <form novalidate="novalidate" enctype="multipart/form-data" data-captcha-action="contactpage" action="/subscribe/submit/" class="row justify-content-center" id="subscribe_form" method="post">
-                            <input type="hidden" name="csrf_token" value="519f6078be92836c24d4eae0a0a4bbd70867a9b4o1618406869"/>
-                            <div class="row justify-content-center py-3">
-                                <div class="form-group mx-4 mx-md-2 p-0 mb-3 mb-lg-0 ">
-                                    <input class="form-control input-border-blue" type="text" name="first_name" placeholder="Name"/>
-                                    <span class="focus-border"><i></i></span>
-                                </div>
-                                <div class="form-group mx-4 mx-md-2 p-0 mb-3 mb-lg-0">
-                                    <input class="form-control input-border-blue" type="email" name="email" placeholder="Email"/>
-                                    <span class="focus-border"><i></i></span>
-                                </div>
-                                <div class="form-group mx-4 mx-md-2 p-0 mb-3 mb-lg-0">
-                                    <button type="submit" class="btn btn-danger text-white px-5">Submit</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </section>
+
+        <template id="subscribe_section" name="Subscribe Form" customize_show="True" inherit_id="my_website.homepage">
+            <xpath expr="//section[@id='subscribe_section']" position="inside">
+                <t t-call="my_website.subscribe_form"/>
+            </xpath>
         </template>
 
         <template id="homepage_latest_article" name="Homepage Latest Article">
