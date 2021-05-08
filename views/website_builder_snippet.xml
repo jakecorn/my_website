@@ -1,0 +1,72 @@
+<odoo>
+    <data>
+        <template id="code_download_button" name="Download Code">
+            <section>
+                <div>
+                    <a href="/web/" class="btn btn-outline-primary" target="_blank">Download Code</a>
+                </div>
+            </section>
+        </template>
+
+        <template id="blog_post_title_ul" name="Title - List">
+            <section class="mb-5">
+                <div>
+                    <h2 class="font-weight-bold mb-3">Things You Need</h2>
+                    <ul>
+                        <li>Arduino</li>
+                        <li>LED</li>
+                        <li>Breadboard</li>
+                        <li>Jumper wires</li>
+                    </ul>
+                </div>
+            </section>
+        </template>
+
+        <template id="blog_post_section_block_no_title" name="Paragraph">
+            <section class="mb-4">
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </section>
+        </template>
+
+        <template id="blog_post_section_block" name="Title - Paragraph">
+            <section class="mb-4">
+                <div class="s_allow_columns container">
+                    <h2 class="font-weight-bold mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
+            </section>
+        </template>
+
+        <template id="website_snippets_post_content" name="Website: Blog Post Content Block" inherit_id="website.snippets">
+            <xpath expr="//t[@t-snippet='website.s_banner']" position="before">
+                <t t-snippet="my_website.code_download_button" t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg">
+                    <keywords>content</keywords>
+                </t>
+            </xpath>
+            <xpath expr="//t[@t-snippet='website.s_banner']" position="before">
+                <t t-snippet="my_website.blog_post_section_block" t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg">
+                    <keywords>content</keywords>
+                </t>
+            </xpath>
+            <xpath expr="//t[@t-snippet='website.s_banner']" position="before">
+                <t t-snippet="my_website.blog_post_section_block_no_title" t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg">
+                    <keywords>content</keywords>
+                </t>
+            </xpath>
+            <xpath expr="//t[@t-snippet='website.s_banner']" position="before">
+                <t t-snippet="my_website.blog_post_title_ul" t-thumbnail="/website/static/src/img/snippets_thumbs/s_text_block.svg">
+                    <keywords>content</keywords>
+                </t>
+            </xpath>
+        </template>
+    </data>
+</odoo>

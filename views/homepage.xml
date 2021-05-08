@@ -4,13 +4,13 @@
             <xpath expr="//header" position="replace">
                 <header t-if="not no_header" id="top" data-anchor="true">
                     <section class="s_parallax bg-black-50 parallax main-header" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax">
-                        <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/Photo by a href=httpsunsplash.com@nahakioleutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyTextRobin Glausera on a href=httpsunsplash.comsphotosarduinoutm_source=unsplash&amp;utm_medium=referral&amp;utm_content=credit.jpg&quot;);"/>
+                        <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/arduino-photo-by-robin-glauser-@-unsplash.com.jpg&quot;);"/>
                         <t t-call="my_website.navbar"></t>
                         <div t-if="pageName == 'homepage'" style="height: 300px;" class="d-flex align-items-center justify-content-center">
                             <div class="text-center  mx-0 mx-lg-5 px-4 px-lg-5 w-100 w-lg-75">
-                                <h2 class="font-weight-bold text-xl">Welcome to Our Website</h2>
-                                <p>Take a look of our amazing build guides with Arduino and start building yours.</p>
-                                <a href="/blog" class="btn btn-success px-4">Check Latest Posts</a>
+                                <h1 class="font-weight-bold text-xl">Welcome to Our Website</h1>
+                                <p>Check out our comprehensive Arduino build guides and begin developing your idea.</p>
+                                <a href="/blog" class="btn btn-success px-4">Find Out More About Our Blog</a>
                             </div>
                         </div>
                     </section>
@@ -83,14 +83,7 @@
                                     </h1>
                                     <div id="description" class="text-dark-white">
                                         <p class="mb-0">
-                                            reat stories have a personality. Consider telling a great story that
-                                            provides
-                                            personality. Writing a story with personality for potential clients
-                                            will assist with
-                                            making a relationship connection. This shows up in small quirks like
-                                            word choices or
-                                            phrases. Write from your point of view, not from someone else's
-                                            experience
+                                            Content here.
                                         </p>
                                     </div>
                                 </div>
@@ -107,30 +100,32 @@
 <!--                    <t t-call="my_website.upcoming_video"></t>-->
                     <div class="container mt-0">
                         <section id="latest_video_section" name="Latest Videos">
-                            <h5 class="text-lg section-title mb-4 font-weight-bold mt-5">LATEST VIDEOS</h5>
+                            <h2 class="text-lg section-title mb-4 font-weight-bold mt-5">LATEST ARTICLES</h2>
                             <div class="row">
-                                <div class="col-12 col-lg-6 mb-4 mb-lg-0 pr-lg-5">
-                                    <t t-call="my_website.homepage_latest_video"/>
-                                </div>
-                                <div class="col-12 col-lg-6 mb-4 mb-lg-0 pl-lg-5">
+                                <t t-set="homepage_latest_video" t-value="request.env['blog.post'].search([('is_mini_guide', '=', False), ('is_published', '=', True)], limit=2)"/>
+
+                                <div t-foreach="homepage_latest_video" t-as="post" class="col-12 col-lg-6 mb-4 mb-lg-0 pr-lg-5">
                                     <t t-call="my_website.homepage_latest_video"/>
                                 </div>
                             </div>
                         </section>
                     </div>
                     <section id="share_your_idea_section"></section>
-                    <section id="latest_article_section" name="Latest Articles" class="py-5">
-                        <div class="container">
-                            <h5 class="text-lg section-title mb-2 font-weight-bold">LATEST ARTICLES</h5>
-                            <div class="row">
-                                <t t-call="my_website.homepage_latest_article"/>
-                                <t t-call="my_website.homepage_latest_article"/>
-                                <t t-call="my_website.homepage_latest_article"/>
-                            </div>
-                        </div>
-
-                        </section>
+                    <section id="latest_article_section" name="Latest Articles"></section>
                     <section id="subscribe_section"></section>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="latest_articles" name="Latest Articles" customize_show="True" inherit_id="my_website.homepage">
+            <xpath expr="//section[@id='latest_article_section']" position="inside">
+                <div class="container py-5">
+                    <h5 class="text-lg section-title mb-2 font-weight-bold">LATEST ARTICLES</h5>
+                    <div class="row">
+                        <t t-call="my_website.homepage_latest_article"/>
+                        <t t-call="my_website.homepage_latest_article"/>
+                        <t t-call="my_website.homepage_latest_article"/>
+                    </div>
                 </div>
             </xpath>
         </template>
@@ -167,14 +162,15 @@
 
         <template id="homepage_latest_video" name="Homepage Latest Video">
             <div>
-                <div class="img-container overflow-hidden mb-3">
-                    <img class="img-fluid" src="/my_website/static/images/test/latestvideo1.jpg"/>
+                <div class="img-container overflow-hidden mb-3 d-flex align-items-center justify-content-center" style="background-color: #f4f5f6">
+                    <t t-set="cover" t-value="json.loads(post.cover_properties)"/>
+                        <img class="img-fluid"  t-attf-alt="#{post.name}" t-attf-src="#{cover.get('background-image').replace('url(', '')[:-1]}"/>
                 </div>
-                <h2 class="text-red text-md">How To Setup The 2x2 LCD</h2>
-                <span class="text-muted text-xs d-block mb-2">March 23, 2020</span>
-                <p>
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-                </p>
+                <h2 class="text-md">
+                    <a t-attf-href="/blog/#{slug(post.blog_id)}/#{slug(post)}" t-attf-title="#{post.name}" class="link-green font-weight-bold" t-esc="post.name"/>
+                </h2>
+                <time t-field="post.post_date" class="text-muted text-xs d-block mb-2" t-options='{"format": "MMMM d, yyyy"}'/>
+                <p t-esc="post.teaser"/>
             </div>
         </template>
     </data>
