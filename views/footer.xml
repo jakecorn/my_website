@@ -7,16 +7,16 @@
                     <ul class="list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><a href="/blog">Blog</a></li>
-                        <li><a href="forum">Forum</a></li>
-                        <li><a href="/contactus">Contact Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/about-me">About Me</a></li>
 
                     </ul>
                 </div>
             </xpath>
             <xpath expr="//div[@class='container']//div[hasclass('col-lg-5')]" position="replace">
                 <div class="col-lg-5 pt24 pb24">
-                    <h5 class="mb-3">About us</h5>
-                    <p>We are a team of passionate people with the objective of sharing our experiences with Arduino. We build great stuffs to showcase our ideas.</p>
+                    <h5 class="mb-3">About me</h5>
+                    <p>I am passionate about sharing my experiences with Arduino. I build things to showcase my ideas. <a href="/about-me">Get to know me</a></p>
                 </div>
             </xpath>
         </template>
