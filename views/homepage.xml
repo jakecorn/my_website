@@ -8,9 +8,9 @@
                         <t t-call="my_website.navbar"></t>
                         <div t-if="pageName == 'homepage'" style="height: 300px;" class="d-flex align-items-center justify-content-center">
                             <div class="text-center  mx-0 mx-lg-5 px-4 px-lg-5 w-100 w-lg-75">
-                                <h1 class="font-weight-bold text-xl">Welcome to Our Website</h1>
-                                <p>Check out our comprehensive Arduino build guides and begin developing your idea.</p>
-                                <a href="/blog" class="btn btn-success px-4">Find Out More About Our Blog</a>
+                                <h1 class="font-weight-bold text-xl">Welcome to My Website</h1>
+                                <p>Check out my comprehensive Arduino build guides and begin developing your idea.</p>
+                                <a href="/blog" class="btn btn-success px-4">Check Out My Blog</a>
                             </div>
                         </div>
                     </section>
