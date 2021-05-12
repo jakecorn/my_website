@@ -3,8 +3,8 @@
         <template id="my_website.header" name="My Website Header" inherit_id="website.template_header_default">
             <xpath expr="//header" position="replace">
                 <header t-if="not no_header" id="top" data-anchor="true">
-                    <section class="s_parallax bg-black-50 parallax main-header" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax">
-                        <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/arduino-photo-by-robin-glauser-@-unsplash.com.jpg&quot;);"/>
+                    <section t-attf-class="s_parallax bg-black-50 main-header {{'parallax' if pageName == 'homepage' else ''}}" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax">
+                        <span t-attf-class="s_parallax_bg oe_img_bg {{'d-none' if pageName != 'homepage' else ''}}" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/arduino-photo-by-robin-glauser-@-unsplash.com.jpg&quot;);"/>
                         <t t-call="my_website.navbar"></t>
                         <div t-if="pageName == 'homepage'" style="height: 300px;" class="d-flex align-items-center justify-content-center">
                             <div class="text-center  mx-0 mx-lg-5 px-4 px-lg-5 w-100 w-lg-75">

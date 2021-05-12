@@ -5,7 +5,9 @@
     section p:last-child {
         margin-bottom: 0px !important;
     }
-    .o_record_cover_component {
-        background-size: contain !important;
+    .blog_header {
+        .o_record_cover_component {
+            background-size: contain !important;
+        }
     }
 }
