@@ -44,10 +44,9 @@ header {
     }
     #latest_video_section{
         .img-container {
-            height: 350px;
-            @include media-breakpoint-down(md){
-                height: auto;
-            }
+            height: 250px;
+            background-size: cover;
+            background-position: center;
         }
     }
 

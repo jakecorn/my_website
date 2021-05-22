@@ -162,9 +162,9 @@
 
         <template id="homepage_latest_video" name="Homepage Latest Video">
             <div>
-                <div class="img-container overflow-hidden mb-3 d-flex align-items-center justify-content-center" style="background-color: #f4f5f6">
-                    <t t-set="cover" t-value="json.loads(post.cover_properties)"/>
-                        <img class="img-fluid"  t-attf-alt="#{post.name}" t-attf-src="#{cover.get('background-image').replace('url(', '')[:-1]}"/>
+                <t t-set="cover" t-value="json.loads(post.cover_properties)"/>
+                <div class="img-container overflow-hidden mb-3 d-flex align-items-center justify-content-center" t-attf-style="background-image: url(#{cover.get('background-image').replace('url(', '')[:-1]})">
+<!--                        <img class="img-fluid"  t-attf-alt="#{post.name}" t-attf-src="#{cover.get('background-image').replace('url(', '')[:-1]}"/>-->
                 </div>
                 <h2 class="text-md">
                     <a t-attf-href="/blog/#{slug(post.blog_id)}/#{slug(post)}" t-attf-title="#{post.name}" class="link-green font-weight-bold" t-esc="post.name"/>
