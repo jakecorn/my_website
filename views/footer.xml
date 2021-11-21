@@ -16,7 +16,7 @@
             <xpath expr="//div[@class='container']//div[hasclass('col-lg-5')]" position="replace">
                 <div class="col-lg-5 pt24 pb24">
                     <h5 class="mb-3">About me</h5>
-                    <p>I am passionate about sharing my experiences with Arduino. I build things to showcase my ideas. <a href="/about-me">Get to know me</a></p>
+                    <p>I build stuff to showcase my ideas and I would love to share my experiences with Arduino. <a href="/about-me">Read more</a></p>
                 </div>
             </xpath>
         </template>

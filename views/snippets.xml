@@ -2,16 +2,15 @@
     <data>
         <template id="share_your_idea_form" name="Share Your Idea Form">
             <section id="share_your_idea_form" class="col-12 mt-5 s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
-                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/arduino-photo-by-spencer-@-unsplash.com.jpg&quot;);"/>
+                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/jake-cornelia-tell-us-what-you-think.JPG&quot;);"/>
                 <div class="bg-overlay" style="background: #350000; opacity: 0.8"></div>
                 <div class="container py-5">
                     <div class="row">
                         <div class="col-12 col-md-6 d-flex justify-content-center  flex-column">
                             <div class="w-100 text-white">
-                                <h2 class="mb-3">TELL US WHAT YOU THINK!</h2>
+                                <h2 class="mb-3">SHARE YOUR IDEA</h2>
                                 <p class="mb-0">
-                                    Do you have any ideas, but you don't have a chance to put them into action or don't know how to start?
-                                    Let me know and I'll show you how. We will build your idea for you to see it in action. The credits are all yours.
+                                    Let me know about it and I'll spread it on the internet. The credit is all yours.
                                 </p>
                             </div>
                         </div>
@@ -63,13 +62,13 @@
 
         <template id="subscribe_form" name="Subscribe Form">
             <div class="newsletter s_parallax bg-black-50 parallax" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax" style="background: #565656;">
-                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px;transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/arduino-photo-by-nicolasthomas@-unsplash.com.jpg&quot;);"/>
+                <span class="s_parallax_bg oe_img_bg" style="top: -86.7px; bottom: -86.7px;transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/jake-cornelia-newletter-form-background.JPG&quot;);"/>
                 <div class="bg-overlay" style="background: #2D8685;opacity: 0.8;"></div>
                 <div class="container py-5">
                     <div class="row">
                         <div class="col-lg-8 offset-lg-2 pt24 pb24">
                             <h2>SUBSCRIBE TO OUR BLOG</h2>
-                            <p>Be the first to find out all the latest news and keep updated with our interesting ideas.</p>
+                            <p>Be the first to find out all the latest news and keep updated with my interesting ideas.</p>
                             <div class="s_newsletter_subscribe_form js_subscribe" data-list-id="1" data-snippet="s_newsletter_subscribe_form">
                                 <div class="input-group">
                                     <input type="email" name="email" class="js_subscribe_email form-control" placeholder="your email..."/>

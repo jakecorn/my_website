@@ -4,13 +4,13 @@
             <xpath expr="//header" position="replace">
                 <header t-if="not no_header" id="top" data-anchor="true">
                     <section t-attf-class="s_parallax bg-black-50 main-header {{'parallax' if pageName == 'homepage' else ''}}" data-scroll-background-ratio="-1.5" data-snippet="s_parallax" data-name="Parallax">
-                        <span t-attf-class="s_parallax_bg oe_img_bg {{'d-none' if pageName != 'homepage' else ''}}" style="top: -86.7px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/arduino-photo-by-robin-glauser-@-unsplash.com.jpg&quot;);"/>
+                        <span t-attf-class="s_parallax_bg oe_img_bg {{'d-none' if pageName != 'homepage' else ''}}" style="top: -200px; bottom: -86.7px; transform: translateY(37px); background-image: url(&quot;/my_website/static/images/banner/jake-cornelia-all-modules.JPG&quot;);"/>
                         <t t-call="my_website.navbar"></t>
                         <div t-if="pageName == 'homepage'" style="height: 300px;" class="d-flex align-items-center justify-content-center">
                             <div class="text-center  mx-0 mx-lg-5 px-4 px-lg-5 w-100 w-lg-75">
-                                <h1 class="font-weight-bold text-xl">Welcome to My Website</h1>
-                                <p>Check out my comprehensive Arduino build guides and begin developing your idea.</p>
-                                <a href="/blog" class="btn btn-success px-4">Check Out My Blog</a>
+                                <h1 class="font-weight-bold text-xl">Arduino Build Guides</h1>
+                                <p>Check out my comprehensive Arduino build guides and start building your idea.</p>
+                                <a href="/blog" class="btn btn-success px-4">Read My Blog Posts</a>
                             </div>
                         </div>
                     </section>
@@ -19,7 +19,7 @@
         </template>
 
         <template id="my_website.navbar" name="My Website Nav Bar">
-            <div class="bg-overlay" style="background: #000000;opacity: 0.8;"></div>
+            <div class="bg-overlay" style="background: #000000;opacity: 0.6;"></div>
             <nav data-name="Navbar" class="navbar navbar-expand-md o_colored_level o_cc shadow-sm px-0" style="background-color: transparent">
                 <div id="navbar-overlay"/>
                 <div id="top_menu_container"
