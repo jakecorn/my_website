@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 from odoo import http
 from odoo.addons.bus.controllers.main import BusController
+from odoo.http import request
+import werkzeug
+
+from odoo.addons.link_tracker.controller.main import LinkTracker
+
 
 class BusController(BusController):
     # @http.route('/api/longpolling/send', type='json', auth='public')
@@ -21,3 +26,19 @@ class BusController(BusController):
 #         return http.request.render('my_website.object', {
 #             'object': obj
 #         })
+
+
+class LinkTracker(LinkTracker):
+
+    @http.route()
+    def full_url_redirect(self, code, **post):
+        country_code = request.session.geoip and request.session.geoip.get('country_code') or False
+        sid = request.session.sid
+        request.env['link.tracker.click'].sudo().add_click(
+            code,
+            ip=request.httprequest.remote_addr,
+            country_code=country_code,
+            sid=sid
+        )
+        redirect_url = request.env['link.tracker'].get_url_from_code(code)
+        return werkzeug.utils.redirect(redirect_url or '', 301)
